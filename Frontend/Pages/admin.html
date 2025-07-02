@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ShadyShow Admin Panel</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div class="admin-container">
+        <h2>ShadyShow Admin Panel</h2>
+        <h3>Add New Movie</h3>
+        <form action="../Backend/controllers/add_movie.php" method="POST">
+            <input type="text" name="title" placeholder="Movie Title" required>
+            <input type="text" name="rating" placeholder="Rating (e.g., PG-13)" required>
+            <input type="text" name="trailer_url" placeholder="Trailer URL" required>
+            <textarea name="cast" placeholder="Cast (comma-separated)" required></textarea>
+            <input type="text" name="showtimes" placeholder="Showtimes (e.g., 14:00,16:00)" required>
+            <button type="submit">Add Movie</button>
+        </form>
+        <?php
+        if (isset($_GET['success'])) {
+            echo "<p style='color:green;'>Movie added successfully.</p>";
+        }
+        ?>
+    </div>
+    <script src="../scripts/admin.js"></script>
+</body>
+</html>
